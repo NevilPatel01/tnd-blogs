@@ -1,6 +1,20 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
-import { SITE_TITLE } from '../consts';
+// Fetch the data from the API at build time
+let articles: { title?: any; id: any; body?: any; };
+try {
+  const res = await fetch('http://127.0.0.1:3000/articles');
+  if (!res.ok) {
+    throw new Error('Failed to fetch data from the API');
+  }
+  articles = await res.json();
+} catch (error) {
+  articles = {
+    id: -1,
+    title: "API not received",
+    body: "No body will display"
+  };
+}
 ---
 
 <Layout
@@ -10,12 +24,18 @@ import { SITE_TITLE } from '../consts';
   heroImage="./../../image.png" 
 >
   <p>
-    Welcome to <strong>The New Developers Club (TND)</strong>, a vibrant and inclusive student-led community at <a href="https://mohawkcollege.ca/"><strong>Mohawk College</strong></a>. We are dedicated to helping students achieve their career goals in technology by filling gaps in the academic curriculum through hands-on workshops, coding challenges, and engaging events. 
+    Welcome to <strong>The New Developers Club (TND)</strong>, a vibrant and inclusive student-led community at <a href="https://mohawkcollege.ca/" target="_blank"><strong>Mohawk College</strong></a>. We are dedicated to helping students achieve their career goals in technology by filling gaps in the academic curriculum through hands-on workshops, coding challenges, and engaging events. 
   </p>
 
   <p>
     <strong>Our mission:</strong> To empower aspiring developers by providing resources, mentorship, and opportunities to enhance their technical skills. Whether you’re just starting out with coding or looking to refine your skills, TND is here to support you.
   </p>
+  <section>
+    <h2>API Response</h2>
+    <h4>Title {articles.title}</h4>
+    <p>ID {articles.id} 📊</p>
+    <p>Body {articles.body}</p>
+  </section>
 
   <section>
     <h2>What We Offer 🚀</h2>
