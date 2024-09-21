@@ -1,0 +1,38 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Welcome to The New Developers Club!</h1>
+			<p>
+				<strong>The New Developers Club (TND)</strong> is a student-led community dedicated to helping aspiring programmers and developers achieve their career goals. We’re committed to filling the gaps in the academic curriculum by providing hands-on workshops, coding challenges, and engaging events that empower members with real-world skills.
+			</p>
+			<p>
+				At TND, we believe that learning goes beyond the classroom. Whether you're a beginner exploring the basics or an experienced coder looking to hone your craft, our community is here to support you. From mentorship opportunities to group projects, we foster a collaborative environment where developers of all levels can learn, grow, and succeed together.
+			</p>
+			<p>
+				🚀 <strong>Join us to:</strong>
+			</p>
+			<ul>
+				<li>Participate in coding workshops and hackathons.</li>
+				<li>Connect with industry professionals and guest speakers.</li>
+				<li>Work on open-source projects and gain practical experience.</li>
+				<li>Build your network and meet like-minded developers.</li>
+			</ul>
+			<p>
+				Our club meets bi-weekly, and we announce meeting times and special events through our <a href="https://discord.gg/8UaTCfeC">Discord server</a>. Whether you're passionate about front-end, back-end, mobile development, or anything in between, there’s something for everyone at TND. Join us today and take the next step in your development journey!
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
