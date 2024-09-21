@@ -1,13 +1,14 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
 // Fetch the data from the API at build time
-let articles: { title?: any; id: any; body?: any; };
+let articles = [];
 try {
   const res = await fetch('http://127.0.0.1:3000/articles');
   if (!res.ok) {
     throw new Error('Failed to fetch data from the API');
   }
   articles = await res.json();
+  console.log(articles);
 } catch (error) {
   articles = {
     id: -1,
@@ -32,9 +33,9 @@ try {
   </p>
   <section>
     <h2>API Response</h2>
-    <h4>Title {articles.title}</h4>
-    <p>ID {articles.id} 📊</p>
-    <p>Body {articles.body}</p>
+    <h4>Title {articles[0].title}</h4>
+    <p>ID {articles[0].id} 📊</p>
+    <p>Body {articles[0].body}</p>
   </section>
 
   <section>
