@@ -7,32 +7,54 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>Welcome to The New Developers Club!</h1>
-			<p>
-				<strong>The New Developers Club (TND)</strong> is a student-led community dedicated to helping aspiring programmers and developers achieve their career goals. We’re committed to filling the gaps in the academic curriculum by providing hands-on workshops, coding challenges, and engaging events that empower members with real-world skills.
-			</p>
-			<p>
-				At TND, we believe that learning goes beyond the classroom. Whether you're a beginner exploring the basics or an experienced coder looking to hone your craft, our community is here to support you. From mentorship opportunities to group projects, we foster a collaborative environment where developers of all levels can learn, grow, and succeed together.
-			</p>
-			<p>
-				🚀 <strong>Join us to:</strong>
-			</p>
-			<ul>
-				<li>Participate in coding workshops and hackathons.</li>
-				<li>Connect with industry professionals and guest speakers.</li>
-				<li>Work on open-source projects and gain practical experience.</li>
-				<li>Build your network and meet like-minded developers.</li>
-			</ul>
-			<p>
-				Our club meets bi-weekly, and we announce meeting times and special events through our <a href="https://discord.gg/8UaTCfeC">Discord server</a>. Whether you're passionate about front-end, back-end, mobile development, or anything in between, there’s something for everyone at TND. Join us today and take the next step in your development journey!
-			</p>
-		</main>
-		<Footer />
-	</body>
+<head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	<style>
+		.hero-image {
+    width: 100%;          /* Full width of the container */
+    height: 300px;       /* Adjust height as needed */
+    background-size: cover;  /* Cover the entire area */
+    background-position: center; /* Center the image */
+    display: flex;       /* Center content inside if needed */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    position: relative;  /* For positioning additional elements if needed */
+	padding-bottom: 20%;
+}
+
+	</style>
+</head>
+<body>
+    <Header />
+    <main>
+        <section class="hero">
+            <h1>Welcome to The New Developers Club!</h1>
+            <p>
+                <strong>The New Developers Club (TND)</strong> is a vibrant, student-led community committed to empowering aspiring programmers and developers. We fill the gaps in the academic curriculum by offering hands-on workshops, coding challenges, and engaging events that equip our members with real-world skills.
+            </p>
+			<div class="hero-image" style="background-image: url('./../../public/tnd.jpeg');"></div>
+        </section>
+		<br>
+        <section class="mission">
+            <h2>Our Mission</h2>
+            <p>
+                At TND, we believe learning extends beyond the classroom. Whether you're a beginner or an experienced coder, our collaborative environment supports your growth. From mentorship opportunities to group projects, we are dedicated to fostering a space where developers of all levels can thrive.
+            </p>
+        </section>
+
+        <section class="join-us">
+            <h2>🚀 Join Us to:</h2>
+            <ul>
+                <li>Participate in coding workshops and hackathons.</li>
+                <li>Connect with industry professionals and guest speakers.</li>
+                <li>Work on open-source projects and gain practical experience.</li>
+                <li>Build your network and meet like-minded developers.</li>
+            </ul>
+            <p>
+                Our club meets bi-weekly, and we announce meeting times and special events through our <a href="https://discord.gg/8UaTCfeC">Discord server</a>. No matter your focus—front-end, back-end, or mobile development—there's something for everyone at TND. Join us today and take the next step in your development journey!
+            </p>
+        </section>
+    </main>
+    <Footer />
+</body>
 </html>
